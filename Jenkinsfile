@@ -38,7 +38,7 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
+                    git branch: 'main', 
                     userRemoteConfigs: [[url: 'https://github.com/spring-projects/spring-petclinic.git']]
                 ])
             }
