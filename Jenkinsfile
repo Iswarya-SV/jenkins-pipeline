@@ -1,8 +1,9 @@
+
 pipeline {
 
     agent {
         node {
-            label 'zorin node'
+            label 'SLAVE01'
         }
     }
 
@@ -18,7 +19,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = "DCUBE_APP",
+        APP_NAME = "DCUBE_APP"
         APP_ENV  = "DEV"
     }
 
