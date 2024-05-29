@@ -1,4 +1,4 @@
-
+@Library('shared-library@main') _
 pipeline {
 
     agent {
@@ -34,15 +34,14 @@ pipeline {
             }
         }
 
-        stage('Code Checkout') {
+        stage('Git Checkout') {
             steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/spring-projects/spring-petclinic.git']]
-                ])
+            gitCheckout(
+                branch: "main",
+                url: "https://github.com/spring-projects/spring-petclinic.git"
+            )
             }
-        }
+    }
 
         stage('Code Build') {
             steps {
