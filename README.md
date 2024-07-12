@@ -1,1 +1,1 @@
-# jenkins-practise
+# jenkinsfile for pipeline job
